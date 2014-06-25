@@ -1,0 +1,43 @@
+<script src="public/system/lib/bootstrap/js/modal.js"></script>
+<section data-ng-controller="IndexController">
+    <h1 mean-token="'home-default'">Demo</h1>
+    <counter-directive class="thumbnail" style="display: inline-block;font-size: 30px;padding-top: 7px;">
+        <span class="glyphicon glyphicon-shopping-cart"></span>
+        {{counter.cart}}
+
+        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#cartList" ng-click="syncList()">
+            Cart list
+        </button>
+
+    </counter-directive>
+    <div  class="row">
+        <div data-ng-repeat="image in images" class="col-xs-6">
+            <img class="img-responsive thumbnail" ng-src="{{image.src}}">
+            <button class="btn btn-warning" style="position: absolute; bottom: 35px;right: 30px" data-ng-click="addToCart(image)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="modal fade" id="cartList" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Cart List</h4>
+                </div>
+                <div class="modal-body">
+                    <div data-ng-repeat="item in entries" data-ng-show="{{entries.length == 10}}">
+                        <b>{{item.product_id}}</b> | <span> {{item.price}} </span>
+                    </div>
+                    <div data-ng-hide="entries.length == 10">
+
+                        Add exactly 10 Items.
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" data-ng-click="">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
