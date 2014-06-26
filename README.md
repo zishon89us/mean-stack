@@ -1,5 +1,8 @@
 <h2> MEAN  | A fullstack JavaScript platform for modern web applications </h2>
 
+
+<a href='http://mean-io-stack.herokuapp.com/'>Demo</a>
+
 Beginning an application from scratch can sometimes be the hardest thing to do. Staring at an empty folder and a file with no code in it yet can be a very daunting thing.
 
 This is simple yet effective sample to shows the steps -- how to setup a project and start adding modules to it.
